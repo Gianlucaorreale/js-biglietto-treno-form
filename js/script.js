@@ -5,3 +5,12 @@ va applicato uno sconto del 20% per i minorenni
 va applicato uno sconto del 40% per gli over 65.
 Il recap dei dati e l'output del prezzo finale va stampato in pagina (formattato con massimo due decimali, per indicare centesimi sul prezzo).
 */
+
+const name = document.getElementById('nameform');
+const km = document.getElementById('fkm');
+const age = document.getElementById('ageform');
+
+const ticketPrize = 0.21 * km;
+
+console.log('prezzo del biglietto : ' + ticketPrize);
+console.log("fascia d'età : " + age);
