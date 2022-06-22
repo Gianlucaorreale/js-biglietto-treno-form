@@ -25,10 +25,19 @@ generate.addEventListener('click' , function() {
     const generate = document.getElementById('generate');
     const undo = document.getElementById('undo');
     const ticketPrize = 0.21 * km;
+    const overDiscount = ticketPrize * 0.60;
+    const minorDiscount = ticketPrize * 0.80;
     prize.innerText = `${sentencePrize} ${ticketPrize}${euro} `;
     identity.innerText = `${sentenceName} ${name} `;
     generation.innerText = `${sentenceGeneration} ${age} `;
     console.log(km);
     console.log(name);
-    console.log(age);   
+    console.log(age);
+    
+    if (age === 'over65') {
+        prize.innerText = `${sentencePrize} ${overDiscount}${euro} `;  
+    }
+    else if (age === 'minorenne') {
+        prize.innerText = `${sentencePrize} ${minorDiscount}${euro} `;   
+    }
 })
