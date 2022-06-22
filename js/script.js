@@ -11,7 +11,13 @@ Il recap dei dati e l'output del prezzo finale va stampato in pagina (formattato
 const prize = document.getElementById('prize');
 const identity = document.getElementById('identity');
 const generation = document.getElementById('generation');
+const discount = document.getElementById('discount');
+
+
 const sentenceName = 'Nome passeggero : '
+const sentenceDiscount = 'Hai diritto ad uno sconto pari al : ';
+const discount20 = '20%';
+const discount40 = '40%';
 const sentencePrize = 'il prezzo del tuo biglietto è : ';
 const sentenceGeneration = 'la tua fascia di età è : ';
 const euro = '€';
@@ -35,9 +41,21 @@ generate.addEventListener('click' , function() {
     console.log(age);
     
     if (age === 'over65') {
-        prize.innerText = `${sentencePrize} ${overDiscount}${euro} `;  
+        prize.innerText = `${sentencePrize} ${overDiscount}${euro} `;
+        discount.innerText = `${sentenceDiscount} ${discount40}`;  
     }
     else if (age === 'minorenne') {
-        prize.innerText = `${sentencePrize} ${minorDiscount}${euro} `;   
+        prize.innerText = `${sentencePrize} ${minorDiscount}${euro} `;
+        discount.innerText = `${sentenceDiscount} ${discount20}`;   
     }
+})
+
+undo.addEventListener('click' , function(){
+    const name = document.getElementById('fname').value;
+    const km = document.getElementById('fkm').value;
+    const age = document.getElementById('ageform').value;
+
+    name.value = '';
+    km.value = '';
+    age.value = '';
 })
