@@ -9,8 +9,15 @@ Il recap dei dati e l'output del prezzo finale va stampato in pagina (formattato
 const name = document.getElementById('nameform');
 const km = document.getElementById('fkm');
 const age = document.getElementById('ageform');
-
+const generate = document.getElementById('generate');
+const undo = document.getElementById('undo');
+const sentence = 'il prezzo del tuo biglietto è : ';
+const prize = document.getElementById('prize');
 const ticketPrize = 0.21 * km;
 
-console.log('prezzo del biglietto : ' + ticketPrize);
-console.log("fascia d'età : " + age);
+
+
+
+generate.addEventListener('click' , function() {
+    prize.innerText = `${sentence} ${ticketPrize} `;   
+})
