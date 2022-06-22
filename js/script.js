@@ -6,18 +6,29 @@ va applicato uno sconto del 40% per gli over 65.
 Il recap dei dati e l'output del prezzo finale va stampato in pagina (formattato con massimo due decimali, per indicare centesimi sul prezzo).
 */
 
-const name = document.getElementById('nameform');
-const km = document.getElementById('fkm');
-const age = document.getElementById('ageform');
-const generate = document.getElementById('generate');
-const undo = document.getElementById('undo');
-const sentence = 'il prezzo del tuo biglietto è : ';
+
+
 const prize = document.getElementById('prize');
-const ticketPrize = 0.21 * km;
-
-
+const identity = document.getElementById('identity');
+const generation = document.getElementById('generation');
+const sentenceName = 'Nome passeggero : '
+const sentencePrize = 'il prezzo del tuo biglietto è : ';
+const sentenceGeneration = 'la tua fascia di età è : ';
+const euro = '€';
 
 
 generate.addEventListener('click' , function() {
-    prize.innerText = `${sentence} ${ticketPrize} `;   
+
+    const name = document.getElementById('fname').value;
+    const km = document.getElementById('fkm').value;
+    const age = document.getElementById('ageform').value;
+    const generate = document.getElementById('generate');
+    const undo = document.getElementById('undo');
+    const ticketPrize = 0.21 * km;
+    prize.innerText = `${sentencePrize} ${ticketPrize}${euro} `;
+    identity.innerText = `${sentenceName} ${name} `;
+    generation.innerText = `${sentenceGeneration} ${age} `;
+    console.log(km);
+    console.log(name);
+    console.log(age);   
 })
